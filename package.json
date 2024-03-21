@@ -1,5 +1,5 @@
 {
-  "name": "api-REST",
+  "name": "api-rest",
   "version": "1.0.0",
   "description": "Api node",
   "main": "src/server.ts",
