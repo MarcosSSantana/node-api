@@ -1,0 +1,17 @@
+[
+  {
+    "name": "T-shirt",
+    "price": 65,
+    "quantity": 10
+  },
+  {
+    "name": "Pants",
+    "price": 110,
+    "quantity": 10
+  },
+  {
+    "name": "Cap",
+    "price": 45.5,
+    "quantity": 10
+  }
+]
