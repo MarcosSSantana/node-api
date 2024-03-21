@@ -5,4 +5,8 @@ export class ProductServices {
     async getAll() {
         return await this.productModel.getAll();
     }
+
+    async getById(id: number) {
+        return await this.productModel.getById(id);
+    }
 }

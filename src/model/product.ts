@@ -1,5 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
+import { Product } from "../types/product";
+
 
 export class ProductModel {
     private async read() {
@@ -9,5 +11,16 @@ export class ProductModel {
 
     async getAll() {
         return await this.read();
+    }
+
+    async getById(id: number) {
+        const products = await this.read();
+        const product = products.find((p: Product) => p.id === id);
+
+        if (!product) {
+            throw new Error("Product not found");
+        } else {
+            return product;
+        }
     }
 }

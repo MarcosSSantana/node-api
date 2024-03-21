@@ -1,15 +1,18 @@
 [
   {
+    "id": 1,
     "name": "T-shirt",
     "price": 65,
     "quantity": 10
   },
   {
+    "id": 2,
     "name": "Pants",
     "price": 110,
     "quantity": 10
   },
   {
+    "id": 3,
     "name": "Cap",
     "price": 45.5,
     "quantity": 10
