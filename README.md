@@ -1,2 +1,3 @@
 # node-api
-Api node 
+
+API em NodeJs utilizando Typescript, Express
