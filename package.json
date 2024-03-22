@@ -5,7 +5,7 @@
   "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx --watch src/server.ts",
+    "dev": "tsx --watch .",
     "build": "tsc",
     "init": "tsc --init"
   },
@@ -13,11 +13,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.1"
+    "express": "^4.19.1",
+    "mysql2": "^3.9.2",
+    "sequelize": "^6.37.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.30",
+    "@types/sequelize": "^4.28.20",
+    "sequelize-cli": "^6.6.2",
     "tsx": "^4.7.1",
     "typescript": "^5.4.3"
   }
