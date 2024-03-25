@@ -1,12 +1,11 @@
 import { Router } from "express";
-import { ProductModel } from "../model/product";
 import { ProductServices } from "../service/product";
 import { ProductController } from "../controller/product";
+import Product from "../model/Product";
 
 const router = Router();
 
-const model = new ProductModel();
-const services = new ProductServices(model);
+const services = new ProductServices(Product);
 const controller = new ProductController(services);
 
 router.get("/products", (request, response) => {

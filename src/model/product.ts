@@ -1,26 +1,37 @@
-import fs from "fs/promises";
-import path from "path";
-import { Product } from "../types/product";
+import { Model } from "sequelize";
+import sequelize from "sequelize";
+import db from "../database/models";
 
-
-export class ProductModel {
-    private async read() {
-        const products = await fs.readFile(path.join(__dirname, "./products.json"), "utf-8");
-        return JSON.parse(products);
-    }
-
-    async getAll() {
-        return await this.read();
-    }
-
-    async getById(id: number) {
-        const products = await this.read();
-        const product = products.find((p: Product) => p.id === id);
-
-        if (!product) {
-            throw new Error("Product not found");
-        } else {
-            return product;
-        }
-    }
+class Product extends Model {
+    declare id: number;
+    declare name: string;
+    declare price: number;
+    declare quantity: number;
 }
+
+Product.init({
+    id: {
+        type: sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    name: {
+        type: sequelize.STRING,
+        allowNull: false,
+    },
+    price: {
+        type: sequelize.FLOAT,
+        allowNull: false
+    },
+    quantity: {
+        type: sequelize.INTEGER,
+        allowNull: false
+    }
+}, {
+    sequelize: db,
+    tableName : 'products',
+    timestamps: false
+})
+
+export default Product;
