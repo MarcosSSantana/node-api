@@ -1,12 +1,14 @@
-import { ProductModel } from "../model/product";
+// import { ProductModel } from "../model";
+import Product from "../model/Product";
+import { ModelStatic } from "sequelize";
 
 export class ProductServices {
-    constructor(private productModel: ProductModel) { }
+    constructor(private productModel: ModelStatic<Product>) { }
     async getAll() {
-        return await this.productModel.getAll();
+        return await this.productModel.findAll();
     }
 
     async getById(id: number) {
-        return await this.productModel.getById(id);
+        return await this.productModel.findByPk(id);
     }
 }
