@@ -16,5 +16,8 @@ router.get("/products/:id", (request, response) => {
     return controller.getProductById(request, response);
 });
 
+router.post("/products", (request, response) => {
+    return controller.createProduct(request, response);
+});
 
 export default router;
